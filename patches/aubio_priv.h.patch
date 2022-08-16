@@ -1,0 +1,14 @@
+--- deps/aubio/src/aubio_priv.h
++++ deps/aubio/src/aubio_priv.h
+@@ -341,11 +341,7 @@
+ #define isnan _isnan
+ #endif
+ 
+-#if !defined(_MSC_VER)
+-#define AUBIO_STRERROR(errno,buf,len) strerror_r(errno, buf, len)
+-#else
+ #define AUBIO_STRERROR(errno,buf,len) strerror_s(buf, len, errno)
+-#endif
+ 
+ #ifdef HAVE_C99_VARARGS_MACROS
+ #define AUBIO_STRERR(...)            \

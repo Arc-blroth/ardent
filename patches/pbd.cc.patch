@@ -1,0 +1,14 @@
+--- deps/ardour/libs/pbd/pbd.cc
++++ deps/ardour/libs/pbd/pbd.cc
+@@ -85,11 +85,6 @@ PBD::init ()
+ 		PBD::info << X_("MMCSS Initialized") << endmsg;
+ 	}
+ #endif
+-
+-	if (!Glib::thread_supported()) {
+-		Glib::thread_init();
+-	}
+-
+ 	Gio::init ();
+ 
+ 	PBD::ID::init ();

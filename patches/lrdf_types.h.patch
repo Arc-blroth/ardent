@@ -1,0 +1,12 @@
+--- deps/LRDF/lrdf_types.h
++++ deps/LRDF/lrdf_types.h
+@@ -7,6 +7,9 @@
+ 
+ #include <sys/types.h>
+ 
++// apparently msys doesn't define int64_t in sys/types
++#include <stdint.h>
++
+ enum lrdf_objtype {
+ 	lrdf_uri,
+ 	lrdf_literal

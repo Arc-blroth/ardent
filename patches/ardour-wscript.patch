@@ -1,0 +1,13 @@
+--- deps/ardour/wscript
++++ deps/ardour/wscript
+@@ -1399,7 +1399,9 @@ int main () { return 0; }
+     # and required on Linux for symbol versioning and ABI compatibility
+     if not (Options.options.dist_target == 'mingw' or Options.options.dist_target == 'msvc'):
+         conf.env.append_value('LIB', 'm')
+-
++    else:
++        conf.env.append_value('LIB', 'bcrypt')
++    
+     sub_config_and_use(conf, 'libs/clearlooks-newer')
+ 
+     for i in children:
